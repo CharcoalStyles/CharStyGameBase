@@ -5,14 +5,6 @@ import flixel.FlxState;
 import states.subStates.PauseState;
 import utils.GlobalState;
 
-enum Play_State
-{
-	Idle;
-	BoardMatching;
-	SpellEffect;
-	GameOver;
-}
-
 class PlayState extends FlxState
 {
 	var globalState:GlobalState;

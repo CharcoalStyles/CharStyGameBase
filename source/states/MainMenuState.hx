@@ -33,12 +33,23 @@ class MainMenuState extends FlxState
 			gamepadId: 0
 		});
 		var mainPage = menu.createPage("Main");
+		var settingsPage = menu.createPage("Settings");
 
-		mainPage.addItem("New Battle", () ->
+		mainPage.addItem("Start Game", () ->
 		{
 			FlxG.switchState(() -> new PlayState());
 		});
-		mainPage.addItem("Toggle Fullscreen", () -> FlxG.fullscreen = !FlxG.fullscreen);
+
+		mainPage.addItem("Settings", () ->
+		{
+			menu.openPage("Settings");
+		});
+
+		settingsPage.addItem("Back", () ->
+		{
+			menu.openPage("Main");
+		});
+		settingsPage.addItem("Toggle Fullscreen", () -> FlxG.fullscreen = !FlxG.fullscreen);
 
 		mainPage.show(true);
 
