@@ -45,6 +45,13 @@ class MainMenuState extends FlxState
 			menu.openPage("Settings");
 		});
 
+		#if !html5
+		mainPage.addItem("Quit", () ->
+		{
+			Sys.exit(0);
+		});
+		#end
+
 		settingsPage.addItem("Back", () ->
 		{
 			menu.openPage("Main");
@@ -52,6 +59,7 @@ class MainMenuState extends FlxState
 		settingsPage.addItem("Toggle Fullscreen", () -> FlxG.fullscreen = !FlxG.fullscreen);
 
 		mainPage.show(true);
+		settingsPage.hide(true);
 
 		add(menu);
 
